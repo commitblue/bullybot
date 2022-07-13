@@ -6,3 +6,7 @@ const commandsModule = require(modulesPath + "commands.js")
 Client.on("MessageCreate", (msg) => {
 
 })
+
+Client.on("ready", () => {
+    console.log("ready")
+})
