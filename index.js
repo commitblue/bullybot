@@ -1,2 +1,2 @@
 // MAKARON GAMES DOODOO FART
-const {Client, Intents} = requrie("discord.js")
+const {Client, Intents, Permissions} = requrie("discord.js")
