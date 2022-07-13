@@ -7,7 +7,13 @@ const commandsModule = require(modulesPath + "commands.js")
 const prefix = "$"
 
 Client.on("MessageCreate", (msg) => {
-
+    if (msg.content.substring(1,prefix.length) === prefix){
+        const fetchedCommand = commandsModule[msg.content.split(" ")[0].substring(prefix.length, msg.content.split(" ")[0].length)]
+        //that was unreadable but who cares
+        if (fetchedCommand){
+            fetchedCommand(msg)
+        }
+    }
 })
 
 Client.on("ready", () => {
