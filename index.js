@@ -13,7 +13,9 @@ require("dotenv").config()
 const prefix = "bullybot$"
 
 client.on("MessageCreate", (msg) => {
-    if (msg.content.substring(1,prefix.length) === prefix){
+    console.log("Message")
+    if (msg.content.substring(1, prefix.length) === prefix){
+        console.log("Logs")
         const fetchedCommand = commandsModule[msg.content.split(" ")[0].substring(prefix.length, msg.content.split(" ")[0].length)]
         //that was unreadable but who cares
         if (fetchedCommand){
