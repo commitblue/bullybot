@@ -4,7 +4,7 @@ const client = new Client({Intents:[Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_ME
 const modulesPath = "./Modules"
 const commandsModule = require(modulesPath + "commands.js")
 
-const prefix = "$"
+const prefix = "bullybot$"
 
 Client.on("MessageCreate", (msg) => {
     if (msg.content.substring(1,prefix.length) === prefix){
