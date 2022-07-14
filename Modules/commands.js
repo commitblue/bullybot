@@ -6,6 +6,10 @@ module.exports = {
         example : "bullybot$activateBullying",
         arguments : "<none>",
         functionToRun : (msg) => {
+            if (!msg.member.permissions.has("ADMINISTRATOR")){
+                msg.reply("u aint no administrator")
+                return
+            }
             settingsOfServers[msg.guild.id].bullymode = true
             writeFileSync("./JSON/settingsOfServers.json", settingsOfServers)
             msg.reply("Activated bullymode.")
@@ -16,6 +20,10 @@ module.exports = {
         example : "bullybot$deactivateBullying",
         arguments : "<none>",
         functionToRun : (msg) => {
+            if (!msg.member.permissions.has("ADMINISTRATOR")){
+                msg.reply("u aint no administrator")
+                return
+            }
             settingsOfServers[msg.guild.id].bullymode = true
             writeFileSync("./JSON/settingsOfServers.json", settingsOfServers)
             msg.reply("Deactivated bullymode.")
