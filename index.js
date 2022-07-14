@@ -12,7 +12,7 @@ require("dotenv").config()
 
 const prefix = "bullybot$"
 
-client.on("MessageCreate", (msg) => {
+client.on("message", (msg) => {
     console.log("Message")
     if (msg.content.substring(1, prefix.length) === prefix){
         console.log("Logs")
