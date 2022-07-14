@@ -1,4 +1,4 @@
-let settingsOfServers = require(".".parent() + "/JSON/settingsOfServers.json")
+let settingsOfServers = require("bullybot/JSON/settingsOfServers.json")
 module.exports = {
 
 }
