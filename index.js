@@ -1,5 +1,5 @@
 // bullybot
-const {Client, Intents, Permissions} = requrie("discord.js")
+const {Client, Intents, Permissions} = require("discord.js")
 const client = new Client({Intents:[Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES]})
 const modulesPath = "./Modules"
 const commandsModule = require(modulesPath + "commands.js")
