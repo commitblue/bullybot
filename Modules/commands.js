@@ -36,7 +36,7 @@ module.exports = {
         }
     },
     readServerSettings : (msg) => {
-        if (settingsOfServers[msg.guild.id]){
+        if (settingsOfServers[msg.guild.id] || !ssettingsOfServers[msg.guild.id] === {}){
             let msgToReply = "Settings:\n"
             for (const setting in settingsOfServers[msg.guild.id]){
                 const val = settingsOfServers[msg.guild.id][setting]
