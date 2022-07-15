@@ -36,16 +36,21 @@ module.exports = {
             msg.reply("Deactivated bullymode.")
         }
     },
-    readServerSettings : (msg) => {
-        if (settingsOfServers[msg.guild.id] || !ssettingsOfServers[msg.guild.id] === {}){
+    readServerSettings : {
+        description : "reads the server settings",
+        example : "bullybot$readServerSettings",
+        arguments : "<none>",
+        functionToRun : (msg) => {
+            if (settingsOfServers[msg.guild.id] || !ssettingsOfServers[msg.guild.id] === {}){
             let msgToReply = "Settings:\n"
             for (const setting in settingsOfServers[msg.guild.id]){
                 const val = settingsOfServers[msg.guild.id][setting]
                 msgToReply = msgToReply + `setting name : ${setting}\nvalue of setting:${val}\n`
             }
             msg.reply(msgToReply)
-        } else {
-            msg.reply("Server has no set settings. (yet)")
-        }
+           } else {
+               msg.reply("Server has no set settings. (yet)")
+           }
+       }
     }
 }
