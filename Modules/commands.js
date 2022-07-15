@@ -41,7 +41,7 @@ module.exports = {
         example : "bullybot$readServerSettings",
         arguments : "<none>",
         functionToRun : (msg) => {
-            if (settingsOfServers[msg.guild.id] || !ssettingsOfServers[msg.guild.id] === {}){
+            if (settingsOfServers[msg.guild.id] || !settingsOfServers[msg.guild.id] === {}){
             let msgToReply = "Settings:\n"
             for (const setting in settingsOfServers[msg.guild.id]){
                 const val = settingsOfServers[msg.guild.id][setting]
