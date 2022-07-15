@@ -1,4 +1,5 @@
 const {readFileSync, writeFileSync} = require("fs")
+const JSON = require("json")
 let settingsOfServers = require("./JSON/settingsOfServers.json")
 module.exports = {
     activateBullying : {
@@ -14,7 +15,7 @@ module.exports = {
                 settingsOfServers[msg.guild.id] = {}
             }
             settingsOfServers[msg.guild.id].bullymode = true
-            writeFileSync("./JSON/settingsOfServers.json", settingsOfServers)
+            writeFileSync("./JSON/settingsOfServers.json", JSON.stringify(settingsOfServers))
             msg.reply("Activated bullymode.")
         }
     },
@@ -31,7 +32,7 @@ module.exports = {
                 settingsOfServers[msg.guild.id] = {}
             }
             settingsOfServers[msg.guild.id].bullymode = true
-            writeFileSync("./JSON/settingsOfServers.json", settingsOfServers)
+            writeFileSync("./JSON/settingsOfServers.json", JSON.stringify(settingsOfServers))
             msg.reply("Deactivated bullymode.")
         }
     },
