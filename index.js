@@ -13,13 +13,13 @@ require("dotenv").config()
 const prefix = "bullybot$"
 
 client.on("messageCreate", (msg) => {
-    console.log("Message")
-    if (msg.content.substring(1, prefix.length) === prefix){
-        console.log("Logs")
-        const fetchedCommand = commandsModule[msg.content.split(" ")[0].substring(prefix.length, msg.content.split(" ")[0].length)]
-        //that was unreadable but who cares
-        if (fetchedCommand){
-            fetchedCommand(msg)
+    if (msg.author.bot){return}
+    const recognizedPrefix = msg.content.substring(0, prefix.length)
+    if (recognizedPrefix === prefix){
+        const messaged = msg.content.substring(prefix.length, msg.content.length)
+        const commandFetched = commandsModule[messaged.split(" ")[0]]
+        if (commandFetched){
+            commandFetched.functionToRun(msg)
         }
     }
 })
