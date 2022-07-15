@@ -10,6 +10,9 @@ module.exports = {
                 msg.reply("u aint no administrator")
                 return
             }
+            if (!settingsOfServers[msg.guild.id]){
+                settingsOfServers[msg.guild.id] = {}
+            }
             settingsOfServers[msg.guild.id].bullymode = true
             writeFileSync("./JSON/settingsOfServers.json", settingsOfServers)
             msg.reply("Activated bullymode.")
@@ -23,6 +26,9 @@ module.exports = {
             if (!msg.member.permissions.has("ADMINISTRATOR")){
                 msg.reply("u aint no administrator")
                 return
+            }
+            if (!settingsOfServers[msg.guild.id]){
+                settingsOfServers[msg.guild.id] = {}
             }
             settingsOfServers[msg.guild.id].bullymode = true
             writeFileSync("./JSON/settingsOfServers.json", settingsOfServers)
