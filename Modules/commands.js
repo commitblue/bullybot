@@ -1,5 +1,4 @@
 const {readFileSync, writeFileSync} = require("fs")
-const JSON = require("json")
 let settingsOfServers = require("./JSON/settingsOfServers.json")
 module.exports = {
     activateBullying : {
